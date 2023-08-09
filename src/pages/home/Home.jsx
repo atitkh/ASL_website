@@ -94,7 +94,7 @@ function Home() {
             <div className='home'>
                 <div className="home_head">
                     <div className="home_head_icon">
-                        <Image src={process.env.PUBLIC_URL + `/images/asl.png`} height={'80'} width={'auto'} />
+                        <Image src={process.env.PUBLIC_URL + `/images/ASL.png`} height={'80'} width={'auto'} />
                     </div>
 
                     <div className="home_head_name">
