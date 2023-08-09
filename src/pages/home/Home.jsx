@@ -94,7 +94,7 @@ function Home() {
             <div className='home'>
                 <div className="home_head">
                     <div className="home_head_icon">
-                        <Image src={process.env.PUBLIC_URL + `/asl.png`} height={'80'} width={'auto'} />
+                        <Image src={process.env.PUBLIC_URL + `/images/asl.png`} height={'80'} width={'auto'} />
                     </div>
 
                     <div className="home_head_name">
@@ -174,7 +174,7 @@ function Home() {
                                 <div style={{ display: 'flex', flexDirection: 'row', flexWrap: 'wrap', justifyContent: 'center', alignItems: 'center' }}>
                                     {alphabetsSearch.map((item) => (
                                         <Stack align="center" style={{ margin: '1rem' }}>
-                                            {item === ' ' ? null : <Image src={process.env.PUBLIC_URL + `/signs/${alphabets.indexOf(item)}.png`} width={100} height={100} />}
+                                            {item === ' ' ? null : <Image src={process.env.PUBLIC_URL + `/images/signs/${alphabets.indexOf(item)}.png`} width={100} height={100} />}
                                             <Text color='black' size={'xl'}>{item}</Text>
                                         </Stack>
                                     ))}
