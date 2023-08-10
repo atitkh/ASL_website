@@ -96,7 +96,7 @@ function Home() {
 
             // main page
             <div className='home' style={{ backgroundColor: theme.colors[theme.primaryColor][1] }}>
-                <div className="home_head" style={{ backgroundColor: '#1C94D9' }}>
+                <div className="home_head" style={{ backgroundColor: '#80d0fe' }}>
                     <div className="home_head_icon">
                         <Image src={process.env.PUBLIC_URL + `/images/ASL.png`} height={'auto'} width={'150'} />
                     </div>
@@ -123,7 +123,7 @@ function Home() {
                         maxWidth: '320px',
                         margin: isMobile ? '1rem' : '1rem 3rem 1rem 1rem',
                         // backgroundColor: theme.colors[theme.primaryColor][2]
-                        backgroundColor: '#1C94D9'
+                        backgroundColor: '#80d0fe'
                     }}>
                         <div id='canvas' style={{
                             minWidth: '320px',
@@ -158,7 +158,7 @@ function Home() {
                                 padding: '1rem',
                                 margin: '1rem',
                                 // backgroundColor: theme.colors[theme.primaryColor][2]
-                                backgroundColor: '#1C94D9'
+                                backgroundColor: '#80d0fe'
                             }}
                         >
                             <Text color='black' weight={'600'} align='center' size={'xl'}>CHEAT SHEET</Text>
@@ -178,16 +178,16 @@ function Home() {
                             <ScrollArea h={'565px'} styles={(theme) => ({
                                 scrollbar: {
                                     '&, &:hover': {
-                                        background: theme.colorScheme === 'dark' ? theme.colors.dark[6] : '#4dbbfa',
+                                        background: theme.colorScheme === 'dark' ? theme.colors.dark[6] : '#80d0fe',
                                         borderRadius: theme.radius.sm,
                                     },
 
                                     '&[data-orientation="vertical"] .mantine-ScrollArea-thumb': {
-                                        backgroundColor: '#fff',
+                                        backgroundColor: '#BCE9FF',
                                     },
 
                                     '&[data-orientation="horizontal"] .mantine-ScrollArea-thumb': {
-                                        backgroundColor: '#fff',
+                                        backgroundColor: '#BCE9FF',
                                     },
                                 }
                             })}
@@ -195,10 +195,10 @@ function Home() {
                                 {alphabetsSearch.map((item1) => (
                                     <div style={{ display: 'flex', flexDirection: 'row', flexWrap: 'wrap', justifyContent: 'center', alignItems: 'center', whiteSpace: 'pre-wrap' }}>
                                         {item1.split('').map((item) => (
-                                            <Stack align="center" style={{ margin: '1rem', backgroundColor: '#4dbbfa', borderRadius: '0.5rem', cursor: 'pointer' }}>
+                                            <Stack align="center" style={{ margin: '1rem', backgroundColor: '#BCE9FF', borderRadius: '0.5rem', cursor: 'pointer' }}>
                                                 <>
                                                     <Image src={process.env.PUBLIC_URL + `/images/signs/${alphabets.indexOf(item)}.png`} width={100} height={100} />
-                                                    <Text color='black' size={'xl'}>{item}</Text>
+                                                    <Text color='black' size={'xl'} style={{marginBottom: '0.5rem'}}>{item}</Text>
                                                 </>
                                             </Stack>
                                         ))}
