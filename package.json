@@ -1,7 +1,7 @@
 {
-  "name": "portfolio_website",
-  "version": "0.2.0",
-  "homepage": "https://portfolio.atitkharel.com.np/",
+  "name": "asl",
+  "version": "0.1.0",
+  "homepage": "https://asl.atitkharel.com.np/",
   "private": true,
   "dependencies": {
     "@emotion/react": "^11.11.1",
