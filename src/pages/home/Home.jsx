@@ -109,7 +109,7 @@ function Home() {
                         <Tooltip label="Try on Snapchat" withArrow>
                             <a href='https://lens.snapchat.com/17e9115780384a2288fe14f54d7e1b54' target="_blank" rel="noreferrer"><h1><IconBrandSnapchat size={'30px'} /></h1></a>
                         </Tooltip>
-                        <a href='https://github.com/atitkh' target="_blank" rel="noreferrer"><h1><IconBrandGithub size={'30px'} /></h1></a>
+                        <a href='https://github.com/atitkh/ASL_website' target="_blank" rel="noreferrer"><h1><IconBrandGithub size={'30px'} /></h1></a>
                     </div>
                 </div>
 
@@ -171,8 +171,23 @@ function Home() {
                                 value={search}
                                 onChange={(e) => handleSearch(e)}
                                 rightSection={
-                                    <ActionIcon onClick={() => setSearch('')}><IconInfoCircle /></ActionIcon>
+                                    <Tooltip
+                                        multiline
+                                        width={220}
+                                        withArrow
+                                        transitionProps={{ duration: 200 }}
+                                        label="Type in a letter or word, such as your name, and the corresponding signs will be highlighted on the cheat sheet. For e.g. John, etc."
+                                    >
+                                        <ActionIcon>
+                                            <IconInfoCircle />
+                                        </ActionIcon>
+                                    </Tooltip>
                                 }
+                                styles={(theme) => ({
+                                    // input: {
+                                    //     backgroundColor: theme.colors.blue[1],
+                                    // },
+                                })}
                             />
 
                             <ScrollArea h={'565px'} styles={(theme) => ({
@@ -198,7 +213,7 @@ function Home() {
                                             <Stack align="center" style={{ margin: '1rem', backgroundColor: '#BCE9FF', borderRadius: '0.5rem', cursor: 'pointer' }}>
                                                 <>
                                                     <Image src={process.env.PUBLIC_URL + `/images/signs/${alphabets.indexOf(item)}.png`} width={100} height={100} />
-                                                    <Text color='black' size={'xl'} style={{marginBottom: '0.5rem'}}>{item}</Text>
+                                                    <Text color='black' size={'xl'} style={{ marginBottom: '0.5rem' }}>{item}</Text>
                                                 </>
                                             </Stack>
                                         ))}
