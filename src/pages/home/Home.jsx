@@ -6,7 +6,7 @@ import { Search } from "@mui/icons-material"
 import { ActionIcon, Box, Button, Group, Image, Input, ScrollArea, Stack, Text, Tooltip, useMantineTheme } from '@mantine/core';
 import { useMediaQuery } from '@mantine/hooks';
 import SnapAR from '../snap/SnapAR';
-import { IconBrandGithub, IconBrandSnapchat, IconInfoCircle, IconInfoSquare } from '@tabler/icons-react';
+import { IconBrandGithub, IconBrandSnapchat, IconInfoCircle } from '@tabler/icons-react';
 
 function Home() {
     const [loading, setLoading] = useState(true);
@@ -183,11 +183,11 @@ function Home() {
                                     },
 
                                     '&[data-orientation="vertical"] .mantine-ScrollArea-thumb': {
-                                        backgroundColor: '#1c94d9',
+                                        backgroundColor: '#fff',
                                     },
 
                                     '&[data-orientation="horizontal"] .mantine-ScrollArea-thumb': {
-                                        backgroundColor: '#1c94d9',
+                                        backgroundColor: '#fff',
                                     },
                                 }
                             })}
