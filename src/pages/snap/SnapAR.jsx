@@ -50,7 +50,7 @@ function SnapAR(props) {
     // set source
     const source = createMediaStreamSource(mediaStreamRef.current, { cameraType: cameraType });
     await session.setSource(source);
-    source.setRenderSize(320, 570);
+    source.setRenderSize(640, 1140);
     // mirror front camera
     if (cameraType === 'front') {
       source.setTransform(Transform2D.MirrorX);
