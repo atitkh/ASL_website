@@ -19,7 +19,7 @@ function Home() {
 
     const [search, setSearch] = useState('')
     const alphabets = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'.split('');
-    const [alphabetsSearch, setAlphabetsSearch] = useState('ABCDEFGHIJKLMNOPQRSTUVWXYZ'.split(''))
+    const [alphabetsSearch, setAlphabetsSearch] = useState(['ABCDEFGHIJKLMNOPQRSTUVWXYZ'])
 
     const handleClose = () => {
         setStartAR(false);
@@ -51,13 +51,16 @@ function Home() {
     }
 
     const handleSearch = (e) => {
-        setSearch(e.target.value);
-        if (e.target.value === '') {
-            setAlphabetsSearch(alphabets);
-        } else {
-            let word = e.target.value.toUpperCase();
-            let result = word.split('');
-            setAlphabetsSearch(result);
+        // only accept alphabets or empty string or string + space
+        if (e.target.value === '' || /^[a-zA-Z ]*$/.test(e.target.value)) {
+            setSearch(e.target.value);
+            if (e.target.value === '') {
+                setAlphabetsSearch(['ABCDEFGHIJKLMNOPQRSTUVWXYZ']);
+            } else {
+                let word = e.target.value.toUpperCase();
+                let words = word.split(' ');
+                setAlphabetsSearch(words);
+            }
         }
     };
 
@@ -106,8 +109,6 @@ function Home() {
                             <a href='https://lens.snapchat.com/17e9115780384a2288fe14f54d7e1b54' target="_blank" rel="noreferrer"><h1><IconBrandSnapchat size={'40px'} /></h1></a>
                         </Tooltip>
                         <a href='https://github.com/atitkh' target="_blank" rel="noreferrer"><h1><IconBrandGithub size={'40px'} /></h1></a>
-                        {/* <a href={socialLinks.linkedin} target="_blank" rel="noreferrer"><h1><LinkedIn fontSize='large' /></h1></a>
-                        <a href={socialLinks.website} target="_blank" rel="noreferrer"><h1><Language fontSize='large' /></h1></a> */}
                     </div>
                 </div>
                 {/* <div className="home_categories">
@@ -117,10 +118,12 @@ function Home() {
                 </div> */}
                 <div className='home_body' style={{ flexDirection: isMobile ? 'column' : 'row', padding: isMobile ? '0' : '1% 0' }}>
                     <Stack direction="horizontal" spacing="xs" style={{
+                        flex: '1',
                         borderRadius: '0.5rem',
                         boxShadow: '0 0 0.5rem 0 rgba(0, 0, 0, 0.2)',
                         padding: '1rem',
                         minWidth: '320px',
+                        maxWidth: '320px',
                         margin: isMobile ? '1rem' : '1rem 3rem 1rem 1rem',
                     }}>
                         <div id='canvas' style={{
@@ -141,7 +144,10 @@ function Home() {
                         >Stop</Button>
                     </Stack>
 
-                    <Group position="center">
+                    <Group position="center" style={{
+                        flex: '2',
+                        padding: '1rem',
+                    }}>
                         <Box
                             style={{
                                 alignItems: 'center',
@@ -162,6 +168,8 @@ function Home() {
                             <Input
                                 placeholder="Search Letter or Word"
                                 variant="filled"
+                                width={'max-content'}
+                                pattern="[A-Za-z]"
                                 style={{ margin: '1rem' }}
                                 icon={<Search />}
                                 value={search}
@@ -170,15 +178,19 @@ function Home() {
 
                             {/* <Text color='black' align='center' size={'xl'}>Alphabet Signs</Text> */}
 
-                            <ScrollArea h={'550px'}>
-                                <div style={{ display: 'flex', flexDirection: 'row', flexWrap: 'wrap', justifyContent: 'center', alignItems: 'center' }}>
-                                    {alphabetsSearch.map((item) => (
-                                        <Stack align="center" style={{ margin: '1rem' }}>
-                                            {item === ' ' ? null : <Image src={process.env.PUBLIC_URL + `/images/signs/${alphabets.indexOf(item)}.png`} width={100} height={100} />}
-                                            <Text color='black' size={'xl'}>{item}</Text>
-                                        </Stack>
-                                    ))}
-                                </div>
+                            <ScrollArea h={'565px'}>
+                                {alphabetsSearch.map((item1) => (
+                                    <div style={{ display: 'flex', flexDirection: 'row', flexWrap: 'wrap', justifyContent: 'center', alignItems: 'center', whiteSpace: 'pre-wrap' }}>
+                                        {item1.split('').map((item) => (
+                                            <Stack align="center" style={{ margin: '1rem' }}>
+                                                <>
+                                                    <Image src={process.env.PUBLIC_URL + `/images/signs/${alphabets.indexOf(item)}.png`} width={100} height={100} />
+                                                    <Text color='black' size={'xl'}>{item}</Text>
+                                                </>
+                                            </Stack>
+                                        ))}
+                                    </div>
+                                ))}
                             </ScrollArea>
 
                         </Box>
