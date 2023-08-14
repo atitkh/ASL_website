@@ -1,8 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import './home.css';
-import './loader.css'
-import axios from 'axios';
-import { Search } from "@mui/icons-material"
+import './loader.css';
+import { Search } from "@mui/icons-material";
 import { ActionIcon, Box, Button, Group, Image, Input, ScrollArea, Stack, Text, Tooltip, useMantineTheme } from '@mantine/core';
 import { useMediaQuery } from '@mantine/hooks';
 import SnapAR from '../snap/SnapAR';
@@ -67,7 +66,6 @@ function Home() {
 
     useEffect(() => {
         const fetchData = async () => {
-            await axios.get('https://api.atitkharel.com.np/portfolio/atit/')
             setLoading(false);
         }
         fetchData();
