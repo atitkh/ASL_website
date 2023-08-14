@@ -133,12 +133,13 @@ function Home() {
                             onClick={() => handleOpen()}
                             disabled={startAR}
                             color='green'
-                        >Start</Button>
+                        >START</Button>
                         <Button
+                            variant='light'
                             onClick={() => handleClose()}
                             disabled={!startAR}
                             color='red'
-                        >Stop</Button>
+                        >STOP</Button>
                     </Stack>
 
                     <Group position="center" style={{
