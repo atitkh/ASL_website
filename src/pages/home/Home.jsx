@@ -96,7 +96,7 @@ function Home() {
 
             // main page
             <div className='home' style={{ backgroundColor: theme.colors[theme.primaryColor][1] }}>
-                <div className="home_head" style={{ backgroundColor: '#80d0fe' }}>
+                <div className="home_head" style={{ backgroundColor: 'white' }}>
                     <div className="home_head_icon">
                         <Image src={process.env.PUBLIC_URL + `/images/ASL.png`} height={'auto'} width={'150'} />
                     </div>
@@ -184,9 +184,9 @@ function Home() {
                                     </Tooltip>
                                 }
                                 styles={(theme) => ({
-                                    // input: {
-                                    //     backgroundColor: theme.colors.blue[1],
-                                    // },
+                                    input: {
+                                        backgroundColor: 'white',
+                                    },
                                 })}
                             />
 

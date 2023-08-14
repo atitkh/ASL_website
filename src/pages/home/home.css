@@ -32,7 +32,7 @@
 }
 
 .home_head_name h1:hover {
-    color: white;
+    /* color: white; */
     transition: transform 0.25s ease-in-out;
     cursor: pointer;
 }
@@ -46,7 +46,7 @@
 }
 
 .home_head_icon:hover {
-    filter: invert(1);
+    /* filter: invert(1); */
     transition: transform 0.25s ease-in-out;
     cursor: pointer;
 }
@@ -66,7 +66,7 @@
 }
 
 .home_head_links h1:hover {
-    color: white;
+    /* color: white; */
     transition: transform 0.25s ease-in-out;
 }
 
