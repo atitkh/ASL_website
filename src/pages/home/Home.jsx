@@ -161,7 +161,7 @@ function Home() {
                                 backgroundColor: '#80d0fe'
                             }}
                         >
-                            <Text color='black' weight={'600'} align='center' size={'xl'}>CHEAT SHEET</Text>
+                            <Text color='black' weight={'600'} align='center' size={'xl'}>ALPHABETS CHEAT SHEET</Text>
 
                             <Input
                                 placeholder="Search Letter or Word"
