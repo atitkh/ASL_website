@@ -143,7 +143,7 @@ function Home() {
                     </Stack>
 
                     <Group position="center" style={{
-                        flex: '2',
+                        flex: '2', 
                         padding: '1rem',
                     }}>
                         <Box
