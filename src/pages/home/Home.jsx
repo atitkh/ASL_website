@@ -105,9 +105,9 @@ function Home() {
 
                     <div className="home_head_links">
                         <Tooltip label="Try on Snapchat" withArrow>
-                            <a href='https://lens.snapchat.com/17e9115780384a2288fe14f54d7e1b54' target="_blank" rel="noreferrer"><h1><IconBrandSnapchat size={'30px'} /></h1></a>
+                            <a href='https://lens.snapchat.com/17e9115780384a2288fe14f54d7e1b54' target="_blank" rel="noreferrer"><h1><Image src={process.env.PUBLIC_URL + `/images/ghostLogo.png`} height={'33px'} width={'33px'} style={{marginBottom: '0.2rem'}} /></h1></a>
                         </Tooltip>
-                        <a href='https://github.com/atitkh/ASL_website' target="_blank" rel="noreferrer"><h1><IconBrandGithub size={'30px'} /></h1></a>
+                        <a href='https://github.com/atitkh/ASL_website' target="_blank" rel="noreferrer"><h1><IconBrandGithub size={'30px'} stroke={'1.05'} /></h1></a>
                     </div>
                 </div>
 
@@ -143,7 +143,7 @@ function Home() {
                     </Stack>
 
                     <Group position="center" style={{
-                        flex: '2', 
+                        flex: '2',
                         padding: '1rem',
                     }}>
                         <Box
@@ -223,9 +223,14 @@ function Home() {
                         </Box>
                     </Group>
                 </div>
-                <div className="home_footer">
+                <div className="home_footer" >
                     <a href="https://kerkarcreations.com/" target="_blank" rel="noreferrer">
-                        <p>©  {new Date().getFullYear()}  Kerkar Creations</p>
+                        <Text weight={'400'} color='black' size={'13px'}>
+                            ©  {new Date().getFullYear()}  Kerkar Creations
+                        </Text>
+                    </a>
+                    <a href="https://snap.com/en-US/" target="_blank" rel="noreferrer" style={{ color: 'black', fontFamily: 'Graphik, sans-serif' }}>
+                        <Image src={process.env.PUBLIC_URL + `/images/pbsnap.png`} height={'auto'} width={'auto'} />
                     </a>
                 </div>
             </div >
