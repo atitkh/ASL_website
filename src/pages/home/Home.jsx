@@ -5,7 +5,7 @@ import { Search } from "@mui/icons-material";
 import { ActionIcon, Box, Button, Group, Image, Input, ScrollArea, Stack, Text, Tooltip, useMantineTheme } from '@mantine/core';
 import { useMediaQuery } from '@mantine/hooks';
 import SnapAR from '../snap/SnapAR';
-import { IconBrandGithub, IconBrandSnapchat, IconInfoCircle } from '@tabler/icons-react';
+import { IconBrandGithub, IconInfoCircle } from '@tabler/icons-react';
 
 function Home() {
     const [loading, setLoading] = useState(true);
